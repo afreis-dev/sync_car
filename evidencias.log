@@ -290,3 +290,37 @@ Script started on 2026-11-07 20:29:11-03:00 [COMMAND="grep SUMMARY /tmp/tsan.err
       1 SUMMARY: ThreadSanitizer: thread leak /mnt/d/Repositorios/CESAR/sync_car/sync_car-runner.c:87 in main
 
 Script done on 2026-11-07 20:29:11-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 20:36:37-03:00 [COMMAND="git.exe archive --format=tar --prefix=sync_car/ -o sync_car.tar HEAD sync_car.c sync_car.h sync_car-runner.c Makefile README.md evidencias.log" <not executed on terminal>]
+
+Script done on 2026-11-07 20:36:38-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 20:36:38-03:00 [COMMAND="tar -tvf sync_car.tar; ls -l sync_car.tar" <not executed on terminal>]
+drwxrwxr-x root/root         0 2026-11-07 20:29 sync_car/
+-rw-rw-r-- root/root       463 2026-11-07 20:29 sync_car/Makefile
+-rw-rw-r-- root/root      2602 2026-11-07 20:29 sync_car/README.md
+-rw-rw-r-- root/root     17145 2026-11-07 20:29 sync_car/evidencias.log
+-rw-rw-r-- root/root      4230 2026-11-07 20:29 sync_car/sync_car-runner.c
+-rw-rw-r-- root/root      1257 2026-11-07 20:29 sync_car/sync_car.c
+-rw-rw-r-- root/root       426 2026-11-07 20:29 sync_car/sync_car.h
+-rwxrwxrwx 1 afreis afreis 40960 Nov  7 20:36 sync_car.tar
+
+Script done on 2026-11-07 20:36:38-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 20:36:38-03:00 [COMMAND="rm -rf /tmp/entrega && mkdir /tmp/entrega && tar -xf sync_car.tar -C /tmp/entrega && cd /tmp/entrega/sync_car && ls && head -6 evidencias.log | tr -d "\r" && make && ./sync_car | tail -2 && make clean" <not executed on terminal>]
+Makefile  README.md  evidencias.log  sync_car-runner.c	sync_car.c  sync_car.h
+Script started on 2026-11-07 19:28:55-03:00 [COMMAND="date; whoami; pwd" <not executed on terminal>]
+Sat Nov  7 19:28:55 -03 2026
+afreis
+/mnt/d/Repositorios/CESAR/sync_car
+
+Script done on 2026-11-07 19:28:55-03:00 [COMMAND_EXIT_CODE="0"]
+gcc -Wall -O2 -pthread -c sync_car.c -o sync_car.o
+gcc -Wall -O2 -pthread -c sync_car-runner.c -o sync_car-runner.o
+gcc -Wall -O2 -pthread -o sync_car sync_car.o sync_car-runner.o
+car departed station with 3 new passenger(s) (expected 3)
+Looks good!
+rm -f sync_car sync_car.o sync_car-runner.o
+
+Script done on 2026-11-07 20:36:39-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 20:36:39-03:00 [COMMAND="n=$(stat -c %s /tmp/entrega/sync_car/evidencias.log); cmp -n $n /tmp/entrega/sync_car/evidencias.log evidencias.log && echo "o log do tar ($n bytes) e o comeco do log atual"" <not executed on terminal>]
+o log do tar (17145 bytes) e o comeco do log atual
+
+Script done on 2026-11-07 20:36:39-03:00 [COMMAND_EXIT_CODE="0"]
