@@ -24,7 +24,7 @@ make
 
 O programa imprime uma linha por carro que entra e sai da estação e termina com `Looks good!` quando os 100 passageiros embarcam corretamente. O código de saída é 0 em caso de sucesso e 1 em caso de erro.
 
-`make test` compila e executa o teste. `make clean` remove o executável e os objetos.
+`make test` compila e executa o teste uma vez. `make stress` executa o teste em sequência e para na primeira falha (`make stress STRESS_RUNS=300` muda a quantidade, o padrão é 100). `make clean` remove o executável e os objetos.
 
 ## Como funciona
 
