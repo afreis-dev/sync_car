@@ -240,3 +240,27 @@ sync_car.c
 sync_car.h
 
 Script done on 2026-11-07 19:40:49-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 19:41:59-03:00 [COMMAND="git.exe archive --format=tar --prefix=sync_car/ -o sync_car.tar HEAD sync_car.c sync_car.h sync_car-runner.c Makefile README.md" <not executed on terminal>]
+
+Script done on 2026-11-07 19:41:59-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 19:41:59-03:00 [COMMAND="tar -tvf sync_car.tar; ls -l sync_car.tar" <not executed on terminal>]
+drwxrwxr-x root/root         0 2026-11-07 19:40 sync_car/
+-rw-rw-r-- root/root       463 2026-11-07 19:40 sync_car/Makefile
+-rw-rw-r-- root/root      2602 2026-11-07 19:40 sync_car/README.md
+-rw-rw-r-- root/root      4230 2026-11-07 19:40 sync_car/sync_car-runner.c
+-rw-rw-r-- root/root      1257 2026-11-07 19:40 sync_car/sync_car.c
+-rw-rw-r-- root/root       426 2026-11-07 19:40 sync_car/sync_car.h
+-rwxrwxrwx 1 afreis afreis 20480 Nov  7 19:41 sync_car.tar
+
+Script done on 2026-11-07 19:41:59-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 19:41:59-03:00 [COMMAND="rm -rf /tmp/entrega && mkdir /tmp/entrega && tar -xf sync_car.tar -C /tmp/entrega && cd /tmp/entrega/sync_car && ls && make && ./sync_car | tail -2 && make clean && ls" <not executed on terminal>]
+Makefile  README.md  sync_car-runner.c	sync_car.c  sync_car.h
+gcc -Wall -O2 -pthread -c sync_car.c -o sync_car.o
+gcc -Wall -O2 -pthread -c sync_car-runner.c -o sync_car-runner.o
+gcc -Wall -O2 -pthread -o sync_car sync_car.o sync_car-runner.o
+car departed station with 46 new passenger(s) (expected 46)
+Looks good!
+rm -f sync_car sync_car.o sync_car-runner.o
+Makefile  README.md  sync_car-runner.c	sync_car.c  sync_car.h
+
+Script done on 2026-11-07 19:42:00-03:00 [COMMAND_EXIT_CODE="0"]
