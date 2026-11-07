@@ -1,0 +1,242 @@
+Script started on 2026-11-07 19:28:55-03:00 [COMMAND="date; whoami; pwd" <not executed on terminal>]
+Sat Nov  7 19:28:55 -03 2026
+afreis
+/mnt/d/Repositorios/CESAR/sync_car
+
+Script done on 2026-11-07 19:28:55-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 19:28:55-03:00 [COMMAND="git.exe init -b main" <not executed on terminal>]
+Initialized empty Git repository in D:/Repositorios/CESAR/sync_car/.git/
+
+Script done on 2026-11-07 19:28:56-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 19:28:56-03:00 [COMMAND="git.exe config core.autocrlf false" <not executed on terminal>]
+
+Script done on 2026-11-07 19:28:56-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 19:28:56-03:00 [COMMAND="git.exe config core.pager cat" <not executed on terminal>]
+
+Script done on 2026-11-07 19:28:56-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 19:28:56-03:00 [COMMAND="git.exe config color.ui false" <not executed on terminal>]
+
+Script done on 2026-11-07 19:28:57-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 19:28:57-03:00 [COMMAND="git.exe config user.name; git.exe config user.email" <not executed on terminal>]
+Arthur Reis
+afsr@cesar.school
+
+Script done on 2026-11-07 19:28:57-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 19:28:57-03:00 [COMMAND="gh.exe repo create sync_car --private --description "Sincronizacao do Metro: estacao com mutex e variaveis de condicao (pthreads)" --source . --remote origin" <not executed on terminal>]
+https://github.com/afreis-dev/sync_car
+
+Script done on 2026-11-07 19:29:01-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 19:29:01-03:00 [COMMAND="git.exe remote -v" <not executed on terminal>]
+origin	git@github.com:afreis-dev/sync_car.git (fetch)
+origin	git@github.com:afreis-dev/sync_car.git (push)
+
+Script done on 2026-11-07 19:29:01-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 19:29:20-03:00 [COMMAND="git.exe add .gitignore .gitattributes && git.exe commit -m "adiciona gitignore e gitattributes"" <not executed on terminal>]
+[main (root-commit) 88bcb5a] adiciona gitignore e gitattributes
+ 2 files changed, 6 insertions(+)
+ create mode 100644 .gitattributes
+ create mode 100644 .gitignore
+
+Script done on 2026-11-07 19:29:39-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 19:29:39-03:00 [COMMAND="cp /mnt/c/Users/arthu/Downloads/sync_car-runner.c . && ls -l" <not executed on terminal>]
+total 12
+-rwxrwxrwx 1 afreis afreis 2296 Nov  7 19:29 evidencias.log
+-rwxrwxrwx 1 afreis afreis 4230 Nov  7 19:29 sync_car-runner.c
+
+Script done on 2026-11-07 19:29:39-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 19:29:39-03:00 [COMMAND="git.exe add sync_car-runner.c && git.exe commit -m "adiciona runner de teste"" <not executed on terminal>]
+[main 3230a36] adiciona runner de teste
+ 1 file changed, 177 insertions(+)
+ create mode 100644 sync_car-runner.c
+
+Script done on 2026-11-07 19:29:41-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 19:29:41-03:00 [COMMAND="git.exe log --format="%h %an <%ae> %ad %s"" <not executed on terminal>]
+3230a36 Arthur Reis <afsr@cesar.school> Sat Nov 7 19:29:40 2026 -0300 adiciona runner de teste
+88bcb5a Arthur Reis <afsr@cesar.school> Sat Nov 7 19:29:21 2026 -0300 adiciona gitignore e gitattributes
+
+Script done on 2026-11-07 19:29:41-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 19:30:02-03:00 [COMMAND="grep -nP "^ +\S" Makefile; echo "linhas de receita com tab:"; grep -cP "^\t" Makefile" <not executed on terminal>]
+linhas de receita com tab:
+4
+
+Script done on 2026-11-07 19:30:02-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 19:30:02-03:00 [COMMAND="git.exe add sync_car.h && git.exe commit -m "declara struct station e prototipos"" <not executed on terminal>]
+[main f90788e] declara struct station e prototipos
+ 1 file changed, 20 insertions(+)
+ create mode 100644 sync_car.h
+
+Script done on 2026-11-07 19:30:03-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 19:30:03-03:00 [COMMAND="git.exe add Makefile && git.exe commit -m "adiciona Makefile"" <not executed on terminal>]
+[main 4d5d7de] adiciona Makefile
+ 1 file changed, 20 insertions(+)
+ create mode 100644 Makefile
+
+Script done on 2026-11-07 19:30:04-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 19:30:18-03:00 [COMMAND="make clean && make" <not executed on terminal>]
+rm -f sync_car sync_car.o sync_car-runner.o
+gcc -Wall -O2 -pthread -c sync_car.c -o sync_car.o
+gcc -Wall -O2 -pthread -c sync_car-runner.c -o sync_car-runner.o
+gcc -Wall -O2 -pthread -o sync_car sync_car.o sync_car-runner.o
+
+Script done on 2026-11-07 19:30:18-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 19:30:19-03:00 [COMMAND="./sync_car" <not executed on terminal>]
+car entering station with 27 free seats
+Error: station_load_car returned early!
+
+Script done on 2026-11-07 19:30:19-03:00 [COMMAND_EXIT_CODE="1"]
+Script started on 2026-11-07 19:30:19-03:00 [COMMAND="git.exe add sync_car.c && git.exe commit -m "adiciona sync_car.c com stubs"" <not executed on terminal>]
+[main 7808297] adiciona sync_car.c com stubs
+ 1 file changed, 24 insertions(+)
+ create mode 100644 sync_car.c
+
+Script done on 2026-11-07 19:30:19-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 19:30:30-03:00 [COMMAND="make clean && make" <not executed on terminal>]
+rm -f sync_car sync_car.o sync_car-runner.o
+gcc -Wall -O2 -pthread -c sync_car.c -o sync_car.o
+gcc -Wall -O2 -pthread -c sync_car-runner.c -o sync_car-runner.o
+gcc -Wall -O2 -pthread -o sync_car sync_car.o sync_car-runner.o
+
+Script done on 2026-11-07 19:30:31-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 19:30:31-03:00 [COMMAND="./sync_car | tail -15" <not executed on terminal>]
+car entering station with 5 free seats
+car departed station with 5 new passenger(s) (expected 5)
+car entering station with 35 free seats
+car departed station with 35 new passenger(s) (expected 35)
+car entering station with 48 free seats
+car departed station with 48 new passenger(s) (expected 48)
+car entering station with 19 free seats
+car departed station with 12 new passenger(s) (expected 12)
+Looks good!
+
+Script done on 2026-11-07 19:30:31-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 19:30:56-03:00 [COMMAND="git.exe add sync_car.c && git.exe commit -m "implementa sincronizacao da estacao"" <not executed on terminal>]
+[main 28c77fc] implementa sincronizacao da estacao
+ 1 file changed, 21 insertions(+)
+
+Script done on 2026-11-07 19:30:58-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 19:30:58-03:00 [COMMAND="git.exe push -u origin main" <not executed on terminal>]
+To github.com:afreis-dev/sync_car.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+Script done on 2026-11-07 19:31:02-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 19:31:02-03:00 [COMMAND="git.exe status -sb" <not executed on terminal>]
+## main...origin/main
+?? evidencias.log
+
+Script done on 2026-11-07 19:31:03-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 19:31:57-03:00 [COMMAND="time (for i in $(seq 1 100); do ./sync_car > /dev/null || { echo "falhou na execucao $i"; exit 1; }; done; echo "100 execucoes seguidas sem falha")" <not executed on terminal>]
+100 execucoes seguidas sem falha
+
+real	0m27.611s
+user	0m1.394s
+sys	0m0.689s
+
+Script done on 2026-11-07 19:32:24-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 19:32:35-03:00 [COMMAND="time (for i in $(seq 1 100); do taskset -c 0 ./sync_car > /dev/null || echo "falha na execucao $i"; done; echo "100 execucoes em uma unica CPU concluidas")" <not executed on terminal>]
+100 execucoes em uma unica CPU concluidas
+
+real	0m30.109s
+user	0m1.989s
+sys	0m0.527s
+
+Script done on 2026-11-07 19:33:05-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 19:33:05-03:00 [COMMAND="time (for j in $(seq 1 8); do (for i in $(seq 1 60); do ./sync_car > /dev/null || echo "falha job $j execucao $i"; done) & done; wait; echo "8 laços x 60 execucoes concluidos")" <not executed on terminal>]
+8 laços x 60 execucoes concluidos
+
+real	0m17.416s
+user	0m2.498s
+sys	0m3.948s
+
+Script done on 2026-11-07 19:33:22-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 19:33:36-03:00 [COMMAND="gcc -fsanitize=thread -g -O1 -pthread -o /tmp/sync_car_tsan sync_car.c sync_car-runner.c" <not executed on terminal>]
+
+Script done on 2026-11-07 19:33:37-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 19:33:37-03:00 [COMMAND="setarch x86_64 -R /tmp/sync_car_tsan > /tmp/tsan.out 2> /tmp/tsan.err; echo "codigo de saida: $?"; tail -3 /tmp/tsan.out; echo "avisos do TSan: $(grep -c "WARNING: ThreadSanitizer" /tmp/tsan.err)"; echo "avisos citando station_: $(grep -c "station_" /tmp/tsan.err)"" <not executed on terminal>]
+codigo de saida: 66
+car entering station with 37 free seats
+car departed station with 26 new passenger(s) (expected 26)
+Looks good!
+avisos do TSan: 5
+avisos citando station_: 0
+
+Script done on 2026-11-07 19:33:37-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 19:33:52-03:00 [COMMAND="lsb_release -d; uname -srm; gcc --version | head -1; make --version | head -1; nproc" <not executed on terminal>]
+Description:	Ubuntu 26.04 LTS
+Linux 6.18.33.2-microsoft-standard-WSL2 x86_64
+gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0
+GNU Make 4.4.1
+2
+
+Script done on 2026-11-07 19:33:52-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 19:34:20-03:00 [COMMAND="git.exe add README.md && git.exe commit -m "adiciona README"" <not executed on terminal>]
+[main f17fa42] adiciona README
+ 1 file changed, 43 insertions(+)
+ create mode 100644 README.md
+
+Script done on 2026-11-07 19:34:21-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 19:34:21-03:00 [COMMAND="git.exe push" <not executed on terminal>]
+To github.com:afreis-dev/sync_car.git
+   28c77fc..f17fa42  main -> main
+
+Script done on 2026-11-07 19:34:24-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 19:36:04-03:00 [COMMAND="gh.exe repo edit afreis-dev/sync_car --visibility public --accept-visibility-change-consequences" <not executed on terminal>]
+
+Script done on 2026-11-07 19:36:05-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 19:36:05-03:00 [COMMAND="gh.exe repo view afreis-dev/sync_car --json url,visibility" <not executed on terminal>]
+{"url":"https://github.com/afreis-dev/sync_car","visibility":"PUBLIC"}
+
+Script done on 2026-11-07 19:36:06-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 19:36:50-03:00 [COMMAND="grep -cP "^\t" Makefile; grep -nP "^ +\S" Makefile" <not executed on terminal>]
+6
+
+Script done on 2026-11-07 19:36:50-03:00 [COMMAND_EXIT_CODE="1"]
+Script started on 2026-11-07 19:36:50-03:00 [COMMAND="make stress STRESS_RUNS=20" <not executed on terminal>]
+for i in $(seq 1 20); do ./sync_car > /dev/null || exit 1; done
+20 execucoes sem falha
+
+Script done on 2026-11-07 19:36:56-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 19:37:01-03:00 [COMMAND="git.exe add Makefile README.md && git.exe commit -m "adiciona alvo stress"" <not executed on terminal>]
+[main 2c199d8] adiciona alvo stress
+ 2 files changed, 7 insertions(+), 2 deletions(-)
+
+Script done on 2026-11-07 19:37:03-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 19:37:03-03:00 [COMMAND="git.exe push" <not executed on terminal>]
+To github.com:afreis-dev/sync_car.git
+   f17fa42..2c199d8  main -> main
+
+Script done on 2026-11-07 19:37:06-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 19:40:48-03:00 [COMMAND="git.exe status -sb; git.exe log --format="%h %an <%ae> %ad %s" --date=format:%H:%M:%S" <not executed on terminal>]
+## main...origin/main
+?? evidencias.log
+2c199d8 Arthur Reis <afsr@cesar.school> 19:37:02 adiciona alvo stress
+f17fa42 Arthur Reis <afsr@cesar.school> 19:34:21 adiciona README
+28c77fc Arthur Reis <afsr@cesar.school> 19:30:58 implementa sincronizacao da estacao
+7808297 Arthur Reis <afsr@cesar.school> 19:30:19 adiciona sync_car.c com stubs
+4d5d7de Arthur Reis <afsr@cesar.school> 19:30:03 adiciona Makefile
+f90788e Arthur Reis <afsr@cesar.school> 19:30:03 declara struct station e prototipos
+3230a36 Arthur Reis <afsr@cesar.school> 19:29:40 adiciona runner de teste
+88bcb5a Arthur Reis <afsr@cesar.school> 19:29:21 adiciona gitignore e gitattributes
+
+Script done on 2026-11-07 19:40:48-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 19:40:48-03:00 [COMMAND="make clean && make && ./sync_car | tail -4" <not executed on terminal>]
+rm -f sync_car sync_car.o sync_car-runner.o
+gcc -Wall -O2 -pthread -c sync_car.c -o sync_car.o
+gcc -Wall -O2 -pthread -c sync_car-runner.c -o sync_car-runner.o
+gcc -Wall -O2 -pthread -o sync_car sync_car.o sync_car-runner.o
+car departed station with 29 new passenger(s) (expected 29)
+car entering station with 39 free seats
+car departed station with 23 new passenger(s) (expected 23)
+Looks good!
+
+Script done on 2026-11-07 19:40:49-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 19:40:49-03:00 [COMMAND="git.exe ls-files" <not executed on terminal>]
+.gitattributes
+.gitignore
+Makefile
+README.md
+sync_car-runner.c
+sync_car.c
+sync_car.h
+
+Script done on 2026-11-07 19:40:49-03:00 [COMMAND_EXIT_CODE="0"]
