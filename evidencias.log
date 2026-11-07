@@ -264,3 +264,29 @@ rm -f sync_car sync_car.o sync_car-runner.o
 Makefile  README.md  sync_car-runner.c	sync_car.c  sync_car.h
 
 Script done on 2026-11-07 19:42:00-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 20:28:53-03:00 [COMMAND="ls -l /tmp/tsan.err; grep -E "Location is global|SUMMARY" /tmp/tsan.err" <not executed on terminal>]
+ls: cannot access '/tmp/tsan.err': No such file or directory
+grep: /tmp/tsan.err: No such file or directory
+
+Script done on 2026-11-07 20:28:53-03:00 [COMMAND_EXIT_CODE="2"]
+Script started on 2026-11-07 20:29:02-03:00 [COMMAND="gcc -fsanitize=thread -g -O1 -pthread -o /tmp/sync_car_tsan sync_car.c sync_car-runner.c" <not executed on terminal>]
+
+Script done on 2026-11-07 20:29:02-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 20:29:02-03:00 [COMMAND="setarch x86_64 -R /tmp/sync_car_tsan > /tmp/tsan.out 2> /tmp/tsan.err; echo "codigo de saida: $?"; tail -1 /tmp/tsan.out; echo "avisos: $(grep -c "WARNING: ThreadSanitizer" /tmp/tsan.err)"; echo "citando station_: $(grep -c "station_" /tmp/tsan.err)"; grep "Location is global" /tmp/tsan.err | sort | uniq -c" <not executed on terminal>]
+codigo de saida: 66
+Looks good!
+avisos: 7
+citando station_: 0
+      2   Location is global 'load_car_returned' of size 4 at 0x555555558040 (sync_car_tsan+0x4040)
+      1   Location is global 'threads_completed' of size 4 at 0x555555558044 (sync_car_tsan+0x4044)
+
+Script done on 2026-11-07 20:29:03-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 20:29:11-03:00 [COMMAND="grep SUMMARY /tmp/tsan.err | sort | uniq -c" <not executed on terminal>]
+      1 SUMMARY: ThreadSanitizer: data race /mnt/d/Repositorios/CESAR/sync_car/sync_car-runner.c:108 in main
+      2 SUMMARY: ThreadSanitizer: data race /mnt/d/Repositorios/CESAR/sync_car/sync_car-runner.c:109 in main
+      1 SUMMARY: ThreadSanitizer: data race /mnt/d/Repositorios/CESAR/sync_car/sync_car-runner.c:127 in main
+      1 SUMMARY: ThreadSanitizer: data race /mnt/d/Repositorios/CESAR/sync_car/sync_car-runner.c:137 in main
+      1 SUMMARY: ThreadSanitizer: thread leak /mnt/d/Repositorios/CESAR/sync_car/sync_car-runner.c:111 in main
+      1 SUMMARY: ThreadSanitizer: thread leak /mnt/d/Repositorios/CESAR/sync_car/sync_car-runner.c:87 in main
+
+Script done on 2026-11-07 20:29:11-03:00 [COMMAND_EXIT_CODE="0"]
