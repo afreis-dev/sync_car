@@ -324,3 +324,36 @@ Script started on 2026-11-07 20:36:39-03:00 [COMMAND="n=$(stat -c %s /tmp/entreg
 o log do tar (17145 bytes) e o comeco do log atual
 
 Script done on 2026-11-07 20:36:39-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 21:57:12-03:00 [COMMAND="git.exe add README.md .gitignore && git.exe commit -m "ajusta README e gitignore para afsr"" <not executed on terminal>]
+[main cc67050] ajusta README e gitignore para afsr
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+Script done on 2026-11-07 21:57:14-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 21:57:14-03:00 [COMMAND="rm -f sync_car.tar; git.exe archive --format=tar --prefix=afsr/ -o afsr.tar HEAD sync_car.c sync_car.h sync_car-runner.c Makefile README.md evidencias.log" <not executed on terminal>]
+
+Script done on 2026-11-07 21:57:14-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 21:57:14-03:00 [COMMAND="tar -tvf afsr.tar; echo "pasta raiz do tar:"; tar -tf afsr.tar | cut -d/ -f1 | sort -u; ls -l afsr.tar" <not executed on terminal>]
+drwxrwxr-x root/root         0 2026-11-07 21:57 afsr/
+-rw-rw-r-- root/root       463 2026-11-07 21:57 afsr/Makefile
+-rw-rw-r-- root/root      2708 2026-11-07 21:57 afsr/README.md
+-rw-rw-r-- root/root     19517 2026-11-07 21:57 afsr/evidencias.log
+-rw-rw-r-- root/root      4230 2026-11-07 21:57 afsr/sync_car-runner.c
+-rw-rw-r-- root/root      1257 2026-11-07 21:57 afsr/sync_car.c
+-rw-rw-r-- root/root       426 2026-11-07 21:57 afsr/sync_car.h
+pasta raiz do tar:
+afsr
+-rwxrwxrwx 1 afreis afreis 40960 Nov  7 21:57 afsr.tar
+
+Script done on 2026-11-07 21:57:14-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-07 21:57:14-03:00 [COMMAND="rm -rf /tmp/entrega && mkdir /tmp/entrega && tar -xf afsr.tar -C /tmp/entrega && cd /tmp/entrega/afsr && ls && make clean && make && ./sync_car | tail -2 && make clean && ls" <not executed on terminal>]
+Makefile  README.md  evidencias.log  sync_car-runner.c	sync_car.c  sync_car.h
+rm -f sync_car sync_car.o sync_car-runner.o
+gcc -Wall -O2 -pthread -c sync_car.c -o sync_car.o
+gcc -Wall -O2 -pthread -c sync_car-runner.c -o sync_car-runner.o
+gcc -Wall -O2 -pthread -o sync_car sync_car.o sync_car-runner.o
+car departed station with 29 new passenger(s) (expected 29)
+Looks good!
+rm -f sync_car sync_car.o sync_car-runner.o
+Makefile  README.md  evidencias.log  sync_car-runner.c	sync_car.c  sync_car.h
+
+Script done on 2026-11-07 21:57:15-03:00 [COMMAND_EXIT_CODE="0"]
