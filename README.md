@@ -9,7 +9,7 @@ Sincronização do Metrô: funções de uma estação de metrô em C, usando thr
 - `sync_car-runner.c`: programa de teste fornecido pelo professor, contém a `main`.
 - `Makefile`: compilação, execução do teste e limpeza.
 - `evidencias.log`: gravação do terminal feita com `script`, com data, usuário, diretório, comandos e saídas da compilação e dos testes.
-- `relatorio.pdf`: relatório da atividade.
+- `afsr.pdf`: relatório da atividade, entregue no Classroom junto com o `afsr.tar` e incluído no repositório do GitHub. Não vai dentro do `.tar`.
 
 ## Sistema operacional
 
